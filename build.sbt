@@ -6,3 +6,12 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
   "ch.qos.logback" % "logback-classic" % "1.2.3"
 )
+
+enablePlugins(JavaAppPackaging)
+enablePlugins(DockerPlugin)
+
+packageName in Docker := "sample-webapp"
+version in Docker := "2.0.0"
+
+dockerBaseImage := "openjdk:latest"
+dockerExposedPorts := List(8080)
