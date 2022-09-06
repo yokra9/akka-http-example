@@ -1,3 +1,6 @@
+ThisBuild / scalaVersion := "2.13.8"
+run / fork := true
+
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor-typed" % "2.6.8",
   "com.typesafe.akka" %% "akka-stream" % "2.6.8",
@@ -10,8 +13,8 @@ libraryDependencies ++= Seq(
 enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)
 
-packageName in Docker := "sample-webapp"
-version in Docker := "2.0.0"
+Docker / packageName := "sample-webapp"
+Docker / version := "2.0.0"
 
 dockerBaseImage := "openjdk:latest"
 dockerExposedPorts := List(8080)
