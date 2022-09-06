@@ -23,5 +23,11 @@ jobs:
         distribution: 'temurin'
         cache: 'sbt'
 
-    - name: Run tests
-      run: sbt test
+    - name: Run tests and create coverage report
+      run: sbt clean coverage test coverageReport
+
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v3
+      with:
+        name: scoverage-report
+        path: target/scala-2.13/scoverage-report/
