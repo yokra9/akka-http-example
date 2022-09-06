@@ -4,14 +4,17 @@ import akka.event.Logging
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
-import scala.concurrent.Await
+import scala.concurrent.{Await, Future}
 import scala.concurrent.duration.Duration
 
-object main {
+object Main {
+  implicit val system = ActorSystem(Behaviors.empty, "my-sample-app")
 
   def main(args: Array[String]): Unit = {
+    Await.ready(start(), Duration.Inf)
+  }
 
-    implicit val system = ActorSystem(Behaviors.empty, "my-sample-app")
+  def start(): Future[Http.ServerBinding] = {
 
     // GET /indexでリクエストのURLパラメータとUserAgentを返却する
     val route =
@@ -26,10 +29,9 @@ object main {
     val host = sys.props.get("http.host") getOrElse "0.0.0.0"
     val port = sys.props.get("http.port").fold(8080) { _.toInt }
 
-    val f = Http().newServerAt(host, port).bind(route)
-
     println(s"server at [$host:$port]")
 
-    Await.ready(f, Duration.Inf)
+    Http().newServerAt(host, port).bind(route)
   }
+
 }
