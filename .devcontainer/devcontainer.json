@@ -24,7 +24,7 @@
 				"args": [
 					"sbt"
 				]
-			},
+			}
 		},
 		"terminal.integrated.defaultProfile.linux": "bash",
 		"java.jdt.ls.java.home": "/docker-java-home"
@@ -33,7 +33,7 @@
 	"extensions": [
 		"vscjava.vscode-java-pack",
 		"scalameta.metals"
-	],
+	]
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
