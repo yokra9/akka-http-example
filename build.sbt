@@ -5,7 +5,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor-typed" % "2.6.20",
   "com.typesafe.akka" %% "akka-stream" % "2.6.20",
   "com.typesafe.akka" %% "akka-http" % "10.2.10",
-  "ch.qos.logback" % "logback-classic" % "1.4.0",
+  "ch.qos.logback" % "logback-classic" % "1.4.1",
   "org.scalactic" %% "scalactic" % "3.2.13",
   "org.scalatest" %% "scalatest" % "3.2.13" % Test
 )
