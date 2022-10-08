@@ -18,3 +18,11 @@ Docker / version := "2.0.0"
 
 dockerBaseImage := "openjdk:latest"
 dockerExposedPorts := List(8080)
+
+assembly / mainClass := Some("Main")
+ThisBuild / assemblyMergeStrategy := {
+  case "module-info.class" => MergeStrategy.discard
+  case x =>
+    val oldStrategy = (assembly / assemblyMergeStrategy).value
+    oldStrategy(x)
+}
