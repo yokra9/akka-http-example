@@ -24,7 +24,7 @@ jobs:
         cache: 'sbt'
 
     - name: Run tests and create coverage report
-      run: sbt clean coverage test coverageReport
+      run: sbt clean coverage test assembly coverageReport
 
     - name: Upload coverage report
       uses: actions/upload-artifact@v3
