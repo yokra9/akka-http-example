@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "2.13.9"
+ThisBuild / scalaVersion := "2.13.8"
 run / fork := true
 
 libraryDependencies ++= Seq(
