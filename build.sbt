@@ -7,7 +7,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http" % "10.2.10",
   "ch.qos.logback" % "logback-classic" % "1.4.14",
   "org.scalactic" %% "scalactic" % "3.2.18",
-  "org.scalatest" %% "scalatest" % "3.2.17" % Test
+  "org.scalatest" %% "scalatest" % "3.2.18" % Test
 )
 
 enablePlugins(JavaAppPackaging)
