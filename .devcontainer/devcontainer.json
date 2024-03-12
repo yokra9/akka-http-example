@@ -14,26 +14,28 @@
 		}
 	},
 	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"terminal.integrated.profiles.linux": {
-			"bash": {
-				"path": "/bin/bash"
+	"customizations": {
+		"vscode": {
+			"terminal.integrated.profiles.linux": {
+				"bash": {
+					"path": "/bin/bash"
+				},
+				"sbt": {
+					"path": "/bin/bash",
+					"args": [
+						"sbt"
+					]
+				}
 			},
-			"sbt": {
-				"path": "/bin/bash",
-				"args": [
-					"sbt"
-				]
-			}
+			"terminal.integrated.defaultProfile.linux": "bash",
+			"java.jdt.ls.java.home": "/docker-java-home"
 		},
-		"terminal.integrated.defaultProfile.linux": "bash",
-		"java.jdt.ls.java.home": "/docker-java-home"
-	},
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"vscjava.vscode-java-pack",
-		"scalameta.metals"
-	]
+		// Add the IDs of extensions you want installed when the container is created.
+		"extensions": [
+			"vscjava.vscode-java-pack",
+			"scalameta.metals"
+		]
+	}
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
