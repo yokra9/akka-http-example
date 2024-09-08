@@ -1,4 +1,4 @@
-# akka-http-example
+# pekko-http-example
 
 [![Test](https://github.com/yokra9/akka-http-example/actions/workflows/Test.yml/badge.svg)](https://github.com/yokra9/akka-http-example/actions/workflows/Test.yml)
 
@@ -17,12 +17,16 @@ sbt run
 # テストを実施
 sbt test
 
-# カバレッジを測定してレポートを出力 (target/scala-2.13/scoverage-report/)
+# カバレッジを測定してレポートを出力
 sbt clean coverage test coverageReport
 
 # Docker イメージのビルド
-sbt docker:publishLocal
+sbt Docker/publishLocal
 
 # Dockerfile 生成のみ (target/docker/stage)
-sbt docker:stage
+sbt Docker/stage
+
+# 手動ビルドとコンテナの開始
+docker build -t pekko-example target/docker/stage/
+docker run -p 8088:8088 --env JAVA_OPTS=-Dhttp.port=8088 pekko-example
 ```

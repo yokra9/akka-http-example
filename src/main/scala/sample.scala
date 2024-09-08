@@ -1,14 +1,15 @@
-import akka.actor.typed.ActorSystem
-import akka.actor.typed.scaladsl.Behaviors
-import akka.event.Logging
-import akka.http.scaladsl.Http
-import akka.http.scaladsl.model._
-import akka.http.scaladsl.server.Directives._
+import org.apache.pekko.actor.typed.ActorSystem
+import org.apache.pekko.actor.typed.scaladsl.Behaviors
+import org.apache.pekko.event.Logging
+import org.apache.pekko.http.scaladsl.Http
+import org.apache.pekko.http.scaladsl.model._
+import org.apache.pekko.http.scaladsl.server.Directives._
 import scala.concurrent.{Await, Future}
 import scala.concurrent.duration.Duration
 
 object Main {
-  implicit val system = ActorSystem(Behaviors.empty, "my-sample-app")
+  implicit val system: ActorSystem[Any] =
+    ActorSystem(Behaviors.empty, "my-sample-app")
 
   def main(args: Array[String]): Unit = {
     Await.ready(start(), Duration.Inf)

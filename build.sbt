@@ -1,10 +1,10 @@
-ThisBuild / scalaVersion := "2.13.14"
+ThisBuild / scalaVersion := "3.3.3"
 run / fork := true
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-actor-typed" % "2.6.20",
-  "com.typesafe.akka" %% "akka-stream" % "2.6.20",
-  "com.typesafe.akka" %% "akka-http" % "10.2.10",
+  "org.apache.pekko" %% "pekko-actor-typed" % "1.1.0",
+  "org.apache.pekko" %% "pekko-stream" % "1.1.0",
+  "org.apache.pekko" %% "pekko-http" % "1.0.1",
   "ch.qos.logback" % "logback-classic" % "1.5.7",
   "org.scalactic" %% "scalactic" % "3.2.19",
   "org.scalatest" %% "scalatest" % "3.2.19" % Test

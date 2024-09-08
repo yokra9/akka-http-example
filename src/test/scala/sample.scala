@@ -1,8 +1,9 @@
-import akka.actor.typed.ActorSystem
-import akka.actor.typed.scaladsl.Behaviors
-import akka.http.scaladsl.Http
-import akka.http.scaladsl.model._
-import akka.http.scaladsl.unmarshalling.Unmarshal
+import org.apache.pekko.actor.typed.ActorSystem
+import org.apache.pekko.actor.typed.scaladsl.Behaviors
+import org.apache.pekko.event.Logging
+import org.apache.pekko.http.scaladsl.Http
+import org.apache.pekko.http.scaladsl.model._
+import org.apache.pekko.http.scaladsl.unmarshalling.Unmarshal
 import scala.concurrent.{Await, Future}
 import scala.concurrent.duration._
 import scala.language.postfixOps
@@ -45,7 +46,7 @@ class MainTests extends AsyncFunSuite {
       .map(str => {
         println(str)
         assert(
-          str.equals("param: Map(q -> 1), user-agent: akka-http}")
+          str.equals("param: Map(q -> 1), user-agent: pekko-http}")
         )
       })
   }
@@ -64,7 +65,7 @@ class MainTests extends AsyncFunSuite {
       .map(str => {
         println(str)
         assert(
-          str.equals("param: Map(), user-agent: akka-http}")
+          str.equals("param: Map(), user-agent: pekko-http}")
         )
       })
   }
