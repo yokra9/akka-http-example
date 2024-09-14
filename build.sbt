@@ -2,8 +2,8 @@ ThisBuild / scalaVersion := "3.3.3"
 run / fork := true
 
 libraryDependencies ++= Seq(
-  "org.apache.pekko" %% "pekko-actor-typed" % "1.1.0",
-  "org.apache.pekko" %% "pekko-stream" % "1.1.0",
+  "org.apache.pekko" %% "pekko-actor-typed" % "1.1.1",
+  "org.apache.pekko" %% "pekko-stream" % "1.1.1",
   "org.apache.pekko" %% "pekko-http" % "1.0.1",
   "ch.qos.logback" % "logback-classic" % "1.5.7",
   "org.scalactic" %% "scalactic" % "3.2.19",
