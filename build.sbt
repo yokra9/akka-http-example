@@ -5,7 +5,7 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor-typed" % "1.6.0",
   "org.apache.pekko" %% "pekko-stream" % "1.6.0",
   "org.apache.pekko" %% "pekko-http" % "1.3.0",
-  "ch.qos.logback" % "logback-classic" % "1.5.34",
+  "ch.qos.logback" % "logback-classic" % "1.5.37",
   "org.scalactic" %% "scalactic" % "3.2.20",
   "org.scalatest" %% "scalatest" % "3.2.20" % Test
 )
