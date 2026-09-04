@@ -1,5 +1,6 @@
 ThisBuild / scalaVersion := "3.3.8"
 run / fork := true
+Test / fork := true
 
 libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor-typed" % "1.6.0",
