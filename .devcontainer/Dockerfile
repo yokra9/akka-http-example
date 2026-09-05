@@ -1,4 +1,4 @@
-ARG VARIANT=25
+ARG VARIANT=21
 FROM mcr.microsoft.com/vscode/devcontainers/java:${VARIANT}
 
 # [Option] Install Maven
